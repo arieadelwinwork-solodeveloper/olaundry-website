@@ -1,0 +1,7 @@
+[build]
+  publish = "Olaundry-website 2"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

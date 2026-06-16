@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section: Proses Pengerjaan — O'Laundry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <style>
+
+    /* ══ SECTION: PROSES PENGERJAAN ══ */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; }
+
+    .proses {
+      background: #0f2a5e;
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .proses::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .proses-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .proses-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(249,115,22,0.15);
+      border: 1px solid rgba(249,115,22,0.4);
+      color: #fdba74;
+      font-size: 11px;
+      font-family: 'Poppins', sans-serif;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .proses-title {
+      font-family: 'Ms Madi', cursive;
+      font-size: 46px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .proses-title span { color: #f97316; }
+    .proses-sub {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: #93afd4;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* Timeline */
+    .timeline {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0; bottom: 0;
+      width: 2px;
+      z-index: 0;
+      background: linear-gradient(to bottom,
+        rgba(249,115,22,0.8) 0%,
+        rgba(249,115,22,0.3) 60%,
+        transparent 100%);
+    }
+    .timeline-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    /* Step dengan gambar — layout vertikal */
+    .timeline-item-visual {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .timeline-visual-img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 0 auto 1rem;
+      background: #0f2a5e;
+    }
+    .timeline-visual-img img {
+      width: 100%;
+      display: block;
+    }
+    .timeline-visual-body {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      width: 100%;
+    }
+    .timeline-icon {
+      flex-shrink: 0;
+      width: 58px; height: 58px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1.5px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #f97316;
+      position: relative;
+      z-index: 10;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .timeline-item:hover .timeline-icon,
+    .timeline-item-visual:hover .timeline-icon {
+      background: #fff;
+      border-color: rgba(249,115,22,0.5);
+      transform: scale(1.08);
+    }
+    .timeline-step {
+      position: absolute;
+      top: -6px; right: -6px;
+      width: 18px; height: 18px;
+      background: #f97316;
+      border-radius: 50%;
+      font-size: 9px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .timeline-content {
+      flex: 1;
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .timeline-item:hover .timeline-content,
+    .timeline-item-visual:hover .timeline-content {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(249,115,22,0.25);
+    }
+    .timeline-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .timeline-name span { color: #f97316; }
+    .timeline-desc {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: #93afd4;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .proses { padding: 3.5rem 1.25rem; }
+      .proses-header { margin-bottom: 1.5rem; }
+      .proses-title { font-size: 36px; }
+      .timeline::before { left: 24px; }
+      .timeline-icon { width: 50px; height: 50px; font-size: 18px; }
+      .timeline-content { padding: 0.875rem 1rem; }
+      .timeline-visual-img--sm {
+        max-width: 260px;
+      }
+    }
+
+    /* Variasi Tempelan Kertas Miring Kiri */
+    [data-aos="scrapbook-left"] {
+      opacity: 0;
+      transform: scale(0.85) rotate(-5deg) translateY(30px);
+      transition-property: transform, opacity;
+    }
+    [data-aos="scrapbook-left"].aos-animate {
+      opacity: 1;
+      transform: scale(1) rotate(0deg) translateY(0);
+    }
+
+    /* Variasi Tempelan Kertas Miring Kanan */
+    [data-aos="scrapbook-right"] {
+      opacity: 0;
+      transform: scale(0.85) rotate(5deg) translateY(30px);
+      transition-property: transform, opacity;
+    }
+    [data-aos="scrapbook-right"].aos-animate {
+      opacity: 1;
+      transform: scale(1) rotate(0deg) translateY(0);
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ══ SECTION: PROSES PENGERJAAN ══ -->
+<section class="proses">
+  <div class="proses-header">
+    <div class="proses-label">
+      <i class="ti ti-list-check"></i>
+      Standar Operasional
+    </div>
+    <h2 class="proses-title">
+      Bagaimana Kami <span>Merawat</span><br>Pakaian Kamu
+    </h2>
+    <p class="proses-sub">
+      Setiap pakaian melewati 6 tahap standar kami —
+      diperlakukan dengan teliti dari awal hingga sampai kembali ke tanganmu.
+    </p>
+  </div>
+
+  <div class="timeline">
+
+    <!-- Step 1 — dengan gambar di atas -->
+    <div class="timeline-item-visual" data-aos="scrapbook-left" data-aos-duration="400">
+      <div class="timeline-visual-img">
+        <img src="../Assets/penerimaan.png" alt="Penerimaan Pakaian">
+      </div>
+      <div class="timeline-visual-body">
+        <div class="timeline-icon">
+          <div class="timeline-step">1</div>
+          <i class="ti ti-shirt"></i>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-name">Penerimaan Pakaian</div>
+          <div class="timeline-desc">
+            Pakaian diterima dan diperiksa kondisi awalnya bersama pelanggan
+            untuk memastikan tidak ada kerusakan sebelum proses dimulai.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="timeline-item" data-aos="scrapbook-right" data-aos-duration="400" data-aos-delay="150">
+      <div class="timeline-icon">
+        <div class="timeline-step">2</div>
+        <i class="ti ti-clipboard-list"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-name">Sortir, Hitung & Rekam</div>
+        <div class="timeline-desc">
+          Pakaian disortir berdasarkan jenis dan warna, dihitung,
+          lalu direkam ke sistem untuk memastikan tidak ada yang terlewat.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 — dengan gambar di atas -->
+    <div class="timeline-item-visual" data-aos="scrapbook-left" data-aos-duration="400" data-aos-delay="250">
+      <div class="timeline-visual-img timeline-visual-img--sm">
+        <img src="../Assets/mesincuci.png" alt="Proses Pencucian">
+      </div>
+      <div class="timeline-visual-body">
+        <div class="timeline-icon">
+          <div class="timeline-step">3</div>
+          <i class="ti ti-wash"></i>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-name">Spotting & Pencucian</div>
+          <div class="timeline-desc">
+            Noda membandel ditangani terlebih dahulu dengan teknik spotting
+            sebelum masuk proses pencucian menggunakan bahan yang aman untuk kain.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="timeline-item" data-aos="scrapbook-right" data-aos-duration="400" data-aos-delay="350">
+      <div class="timeline-icon">
+        <div class="timeline-step">4</div>
+        <i class="ti ti-wind"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-name">Pengeringan</div>
+        <div class="timeline-desc">
+          Pakaian dikeringkan dengan suhu yang disesuaikan jenis kain
+          agar tidak menyusut dan tetap dalam kondisi terbaik.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 — dengan gambar di atas -->
+    <div class="timeline-item-visual" data-aos="scrapbook-left" data-aos-duration="400" data-aos-delay="450">
+      <div class="timeline-visual-img timeline-visual-img--sm">
+        <img src="../Assets/setrika.png" alt="Proses Finishing">
+      </div>
+      <div class="timeline-visual-body">
+        <div class="timeline-icon">
+          <div class="timeline-step">5</div>
+          <i class="ti ti-ironing"></i>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-name">Finishing <span>— Lipat / Setrika, Parfum & Packing</span></div>
+          <div class="timeline-desc">
+            Pakaian dilipat rapi atau disetrika sesuai permintaan,
+            disemprot parfum pilihan, lalu dikemas dengan bersih dan rapi.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="timeline-item">
+      <div class="timeline-icon">
+        <div class="timeline-step">6</div>
+        <i class="ti ti-package"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-name">Pengembalian</div>
+        <div class="timeline-desc">
+          Pakaian dikembalikan dalam kondisi bersih, wangi, dan terpacking rapi —
+          siap diambil atau diantarkan ke alamatmu.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: false,
+    offset: 80,
+    easing: 'ease-out-cubic'
+  });
+</script>
+
+</body>
+</html>

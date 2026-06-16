@@ -1,0 +1,2530 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>O'Laundry — Serve Wholeheartedly</title>
+  <meta name="description" content="Laundry profesional di Pontianak. Cuci kiloan, setrika, bedcover. Garansi cuci ulang gratis. Jl. Purnama 2 No. 78.">
+  <meta name="keywords" content="Laundry Pontianak, Laundry Kiloan, Laundry Satuan, Cuci kering setrika, binatu">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Ms+Madi&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <style>
+/* â”€â”€ RESET & BASE â”€â”€ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    /* â”€â”€ CSS VARIABLES â”€â”€ */
+    :root {
+      --navy: #0f2a5e;
+      --navy-light: #1a3a78;
+      --orange: #f97316;
+      --orange-light: #fb923c;
+      --green-wa: #25d366;
+      --white: #ffffff;
+      --text-muted: #93afd4;
+      --bg-light: #f8fafc;
+    }
+
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       NAVBAR
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    .navbar {
+      background: var(--navy);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 100%;
+    }
+    .navbar-logo img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .navbar-brand {
+      font-family: 'Kaushan Script', cursive;
+      font-size: clamp(0.9rem, 3.2vw, 1.5rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+    .navbar-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-wa);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .navbar-cta:hover {
+      background: #1fb355;
+      transform: translateY(-1px);
+    }
+
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       HERO
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    .hero {
+      background: var(--navy);
+      padding: 4rem 2rem 4rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      min-height: 460px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: 60px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(249,115,22,0.09) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: -40px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-left {
+      flex: 1;
+      z-index: 2;
+      min-width: 0;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(249,115,22,0.15);
+      border: 1px solid rgba(249,115,22,0.4);
+      color: #fdba74;
+      font-size: 11px;
+      font-weight: 400;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+      animation: fadeInDown 0.6s ease both;
+    }
+    .hero-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 56px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.7s ease 0.1s both;
+    }
+    .hero-title .accent {
+      color: var(--orange);
+      display: block;
+    }
+    .hero-sub {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+      max-width: 420px;
+      animation: fadeInUp 0.7s ease 0.2s both;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.7s ease 0.3s both;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(249,115,22,0.35);
+    }
+    .btn-primary:hover {
+      background: #ea6a0a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(249,115,22,0.45);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-size: 13px;
+      font-weight: 400;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-2px);
+    }
+
+    /* â”€â”€ PHONE 3D PREMIUM â”€â”€ */
+    .hero-right {
+      flex: 0 0 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      perspective: 1500px;
+      animation: fadeInRight 0.9s ease 0.4s both;
+      padding-bottom: 28px;
+    }
+    .phone-float-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: float-phone 4.5s ease-in-out infinite;
+    }
+    .phone-scene {
+      transform: perspective(1500px) rotateY(-12deg) rotateX(8deg) rotateZ(2deg);
+      transform-style: preserve-3d;
+      transition: transform 0.55s ease;
+      width: 180px;
+      position: relative;
+      will-change: transform;
+    }
+    .phone-scene:hover {
+      transform: perspective(1500px) rotateY(-8deg) rotateX(5deg) rotateZ(1deg);
+    }
+    .phone-shadow {
+      width: 130px;
+      height: 20px;
+      margin-top: 20px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 45%, transparent 72%);
+      filter: blur(5px);
+      animation: shadow-pulse 4.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .phone-front {
+      width: 180px; height: 368px;
+      background: linear-gradient(160deg, #1c2b40 0%, #0d1b2a 100%);
+      border-radius: 36px; padding: 10px;
+      position: relative;
+      border: 1.5px solid rgba(255,255,255,0.18);
+      transform-style: preserve-3d;
+      transform: translateZ(2px);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.42),
+        -10px 0 18px rgba(7,16,28,0.35),
+        0 10px 0 rgba(5,13,22,0.25);
+    }
+    .phone-side-right,
+    .phone-side-bottom { display: none; }
+    .phone-front::before {
+      content: ''; position: absolute; inset: 0;
+      border-radius: 36px;
+      background: linear-gradient(130deg, rgba(255,255,255,0.09) 0%, transparent 50%);
+      pointer-events: none; z-index: 10;
+    }
+    .phone-front::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 36px;
+      pointer-events: none;
+      z-index: 2;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.02) 12%, transparent 22%),
+        linear-gradient(180deg, transparent 68%, rgba(6, 12, 22, 0.28) 100%);
+    }
+    .phone-screen {
+      width: 100%; height: 100%; background: #f1f5f9;
+      border-radius: 28px; overflow: hidden;
+      display: flex; flex-direction: column; position: relative;
+      transform: translateZ(4px);
+      backface-visibility: hidden;
+      -webkit-font-smoothing: antialiased;
+      isolation: isolate;
+    }
+    .dynamic-island {
+      position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+      width: 80px; height: 22px;
+      background: #0d1b2a; border-radius: 999px; z-index: 5;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .di-cam {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: #1a2c40; border: 1.5px solid #2a3f57;
+    }
+    .app-header {
+      background: var(--navy); padding: 38px 12px 10px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .app-avatar {
+      width: 28px; height: 28px; background: var(--orange);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-family: 'Kaushan Script', cursive;
+      font-size: 11px; color: #fff; flex-shrink: 0;
+    }
+    .app-name { font-size: 10px; font-weight: 600; color: #fff; }
+    .app-status {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 8px;
+      color: #93afd4;
+      text-transform: capitalize;
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.35);
+    }
+    .app-body {
+      flex: 1; min-height: 0; padding: 10px 8px;
+      display: flex; flex-direction: column; gap: 6px;
+      background: #e8edf5; overflow: hidden;
+      transform: translateZ(0);
+    }
+    .bubble {
+      max-width: 85%; border-radius: 10px 10px 10px 2px;
+      padding: 7px 9px; font-size: 8.5px; line-height: 1.45;
+      color: #1e293b; background: #fff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.08); align-self: flex-start;
+    }
+    .bubble.right {
+      align-self: flex-end; background: #dcf8c6;
+      border-radius: 10px 10px 2px 10px;
+    }
+    .bubble-label { font-size: 7.5px; font-weight: 600; color: var(--orange); margin-bottom: 2px; }
+    .service-row {
+      display: flex; align-items: center; gap: 5px;
+      padding: 5px 7px; background: rgba(15,42,94,0.06);
+      border-radius: 6px; margin-top: 4px;
+    }
+    .s-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+    .s-text { font-size: 8px; color: #334155; }
+    .app-bottom {
+      background: #fff; padding: 6px 8px;
+      display: flex; align-items: center; gap: 6px;
+      border-top: 0.5px solid #e2e8f0;
+    }
+    .app-input {
+      flex: 1; height: 20px; background: #f1f5f9; border-radius: 10px;
+      font-size: 8px; color: #94a3b8;
+      display: flex; align-items: center; padding: 0 8px;
+    }
+    .app-send {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--green-wa);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* â”€â”€ STATS STRIP â”€â”€ */
+    .stats-strip {
+      background: var(--orange);
+      padding: 1rem 2rem;
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      align-items: center;
+    }
+    .stat-item { display: flex; align-items: center; gap: 10px; }
+    .stat-num { font-size: 17px; font-weight: 600; color: #fff; line-height: 1.2; }
+    .stat-label { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.88); line-height: 1.2; }
+    .stat-divider { width: 1px; background: rgba(255,255,255,0.3); height: 30px; align-self: center; }
+
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       ANIMATIONS
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes float-phone {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+    @keyframes shadow-pulse {
+      0%, 100% { transform: scale(1);    opacity: 0.55; }
+      50%      { transform: scale(0.78); opacity: 0.32; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .phone-float-wrapper,
+      .phone-shadow { animation: none; }
+    }
+
+    /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       RESPONSIVE
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; align-items: center; padding: 2.5rem 1.25rem 3rem; min-height: auto; gap: 2.5rem; }
+      .hero-left { text-align: center; }
+      .hero-ctas { justify-content: center; }
+      .hero-right { width: 100%; max-width: 220px; padding-bottom: 20px; }
+      .phone-shadow { width: 110px; margin-top: 14px; }
+      .hero-title { font-size: 40px; }
+      .stats-strip { gap: 1rem; padding: 0.875rem 1.25rem; }
+      .stat-divider { display: none; }
+      .navbar { padding: 0 1rem; }
+      .navbar-logo { gap: 8px; min-width: 0; }
+      .navbar-logo img { height: 34px; }
+      .navbar-brand { font-size: 1.05rem; }
+      .navbar-cta { padding: 8px 12px; font-size: 12px; }
+    }
+    @media (max-width: 480px) {
+      .navbar { padding: 0 0.75rem; }
+      .navbar-logo { gap: 6px; }
+      .navbar-logo img { height: 30px; }
+      .navbar-brand { font-size: 0.88rem; }
+      .navbar-cta { padding: 7px 10px; font-size: 11px; gap: 6px; }
+      .hero-title { font-size: 34px; }
+      .hero-ctas { flex-direction: column; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+    }
+
+/* ══ SECTION: PROSES PENGERJAAN ══ */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; }
+
+    .proses {
+      background: #0f2a5e;
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .proses::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .proses-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .proses-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(249,115,22,0.15);
+      border: 1px solid rgba(249,115,22,0.4);
+      color: #fdba74;
+      font-size: 11px;
+      font-family: 'Poppins', sans-serif;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .proses-header-img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 0 auto 1.25rem;
+      background: #0f2a5e;
+    }
+    .proses-header-img img {
+      width: 100%;
+      display: block;
+    }
+    .proses-title {
+      font-family: 'Ms Madi', cursive;
+      font-size: 46px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .proses-title span { color: #f97316; }
+    .proses-sub {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: #93afd4;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* Timeline */
+    .timeline {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 0; bottom: 0;
+      width: 2px;
+      z-index: 0;
+      background: linear-gradient(to bottom,
+        rgba(249,115,22,0.8) 0%,
+        rgba(249,115,22,0.3) 60%,
+        transparent 100%);
+    }
+    .timeline-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    /* Step dengan gambar — layout vertikal */
+    .timeline-item-visual {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .timeline-visual-img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 0 auto 1rem;
+      background: #0f2a5e;
+    }
+    .timeline-visual-img img {
+      width: 100%;
+      display: block;
+    }
+    .timeline-visual-body {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      width: 100%;
+    }
+    .timeline-icon {
+      flex-shrink: 0;
+      width: 58px; height: 58px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1.5px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #f97316;
+      position: relative;
+      z-index: 10;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .timeline-item:hover .timeline-icon,
+    .timeline-item-visual:hover .timeline-icon {
+      background: #fff;
+      border-color: rgba(249,115,22,0.5);
+      transform: scale(1.08);
+    }
+    .timeline-step {
+      position: absolute;
+      top: -6px; right: -6px;
+      width: 18px; height: 18px;
+      background: #f97316;
+      border-radius: 50%;
+      font-size: 9px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .timeline-content {
+      flex: 1;
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .timeline-item:hover .timeline-content,
+    .timeline-item-visual:hover .timeline-content {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(249,115,22,0.25);
+    }
+    .timeline-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .timeline-name span { color: #f97316; }
+    .timeline-desc {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: #93afd4;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .proses { padding: 3.5rem 1.25rem; }
+      .proses-header { margin-bottom: 1.5rem; }
+      .proses-title { font-size: 36px; }
+      .timeline::before { left: 24px; }
+      .timeline-icon { width: 50px; height: 50px; font-size: 18px; }
+      .timeline-content { padding: 0.875rem 1rem; }
+      .timeline-visual-img--sm {
+        max-width: 260px;
+      }
+    }
+
+    /* Variasi Tempelan Kertas Miring Kiri */
+    [data-aos="scrapbook-left"] {
+      opacity: 0;
+      transform: scale(0.85) rotate(-5deg) translateY(30px);
+      transition-property: transform, opacity;
+    }
+    [data-aos="scrapbook-left"].aos-animate {
+      opacity: 1;
+      transform: scale(1) rotate(0deg) translateY(0);
+    }
+
+    /* Variasi Tempelan Kertas Miring Kanan */
+    [data-aos="scrapbook-right"] {
+      opacity: 0;
+      transform: scale(0.85) rotate(5deg) translateY(30px);
+      transition-property: transform, opacity;
+    }
+    [data-aos="scrapbook-right"].aos-animate {
+      opacity: 1;
+      transform: scale(1) rotate(0deg) translateY(0);
+    }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; }
+
+    /* ══ SECTION: HARGA ══ */
+    .harga {
+      background: #0f2a5e;
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .harga::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -80px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .harga-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .harga-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(249,115,22,0.15);
+      border: 1px solid rgba(249,115,22,0.4);
+      color: #fdba74;
+      font-size: 11px;
+      font-family: 'Poppins', sans-serif;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .harga-title {
+      font-family: 'Ms Madi', cursive;
+      font-size: 46px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .harga-title span { color: #f97316; }
+    .harga-sub {
+      font-size: 13px;
+      font-weight: 300;
+      color: #93afd4;
+      max-width: 460px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+    .harga-cat { margin-bottom: 2.5rem; }
+    .harga-cat:last-child { margin-bottom: 0; }
+    .cat-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #93afd4;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 1rem;
+      padding-bottom: 0.625rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .cat-title i { font-size: 16px; color: #f97316; }
+    .harga-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .harga-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .harga-grid > * { min-width: 0; }
+    .harga-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(249,115,22,0.3);
+    }
+    .card-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.4;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    .card-price {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+    }
+    .card-price span {
+      font-size: 11px;
+      font-weight: 300;
+      color: #93afd4;
+      margin-left: 2px;
+    }
+    .card-badges {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-top: 2px;
+    }
+    .badge {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 400;
+      font-family: 'Poppins', sans-serif;
+    }
+    .b-express { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.25); }
+    .b-reguler { background: rgba(96,165,250,0.12); color: #60a5fa; border: 1px solid rgba(96,165,250,0.2); }
+    .b-irit    { background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.2); }
+    .b-hari    { background: rgba(255,255,255,0.07); color: #93afd4; border: 1px solid rgba(255,255,255,0.1); }
+    .b-min     { background: rgba(249,115,22,0.1); color: #fb923c; border: 1px solid rgba(249,115,22,0.2); }
+    .harga-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin: 2rem 0;
+    }
+    @media (max-width: 768px) {
+      .harga { padding: 3rem 0.75rem; }
+      .harga-title { font-size: 36px; }
+      .harga-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+      .harga-card { padding: 0.875rem; }
+      .card-name { font-size: 11px; }
+    }
+    @media (max-width: 480px) {
+      .harga { padding: 3rem 0.75rem; }
+      .harga-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+      .harga-card { padding: 0.75rem; }
+      .card-name { font-size: 11px; }
+      .card-price { font-size: 17px; }
+      .order-counter-label { display: none; }
+      .order-counter-unit { min-width: 18px; font-size: 9px; }
+    }
+
+    /* ══ Kalkulator Antar Jemput ══ */
+    .harga-card--kalkulator {
+      grid-column: 1 / -1;
+      gap: 1rem;
+      padding: 1.25rem;
+    }
+    .harga-card--kalkulator:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.08);
+    }
+    .kalkulator-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .kalkulator-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(249,115,22,0.15);
+      border: 1px solid rgba(249,115,22,0.35);
+      border-radius: 10px;
+      color: #f97316;
+      font-size: 18px;
+    }
+    .kalkulator-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.35;
+      margin-bottom: 2px;
+    }
+    .kalkulator-desc {
+      font-size: 11px;
+      font-weight: 300;
+      color: #93afd4;
+      line-height: 1.5;
+    }
+    .kalkulator-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .kalkulator-field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .kalkulator-field label {
+      font-size: 10px;
+      font-weight: 500;
+      color: #93afd4;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .kalkulator-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .kalkulator-input-wrap i {
+      position: absolute;
+      left: 10px;
+      font-size: 14px;
+      color: #f97316;
+      pointer-events: none;
+    }
+    .kalkulator-input {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 9px 10px 9px 32px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .kalkulator-input::placeholder { color: rgba(147,175,212,0.5); }
+    .kalkulator-input:focus {
+      border-color: rgba(249,115,22,0.5);
+      background: rgba(255,255,255,0.09);
+    }
+    .kalkulator-input[readonly] {
+      color: #93afd4;
+      cursor: default;
+    }
+    .kalkulator-field--full {
+      grid-column: 1 / -1;
+    }
+    .kalkulator-textarea-wrap {
+      position: relative;
+      display: flex;
+    }
+    .kalkulator-textarea-wrap i {
+      position: absolute;
+      left: 10px;
+      top: 11px;
+      font-size: 14px;
+      color: #f97316;
+      pointer-events: none;
+    }
+    .kalkulator-textarea {
+      width: 100%;
+      min-height: 72px;
+      resize: vertical;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 9px 10px 9px 32px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      color: #fff;
+      outline: none;
+      line-height: 1.5;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .kalkulator-textarea::placeholder { color: rgba(147,175,212,0.5); }
+    .kalkulator-textarea:focus {
+      border-color: rgba(249,115,22,0.5);
+      background: rgba(255,255,255,0.09);
+    }
+    .kalkulator-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      border: none;
+      border-radius: 10px;
+      padding: 11px 18px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: #fff;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      box-shadow: 0 4px 14px rgba(249,115,22,0.25);
+    }
+    .kalkulator-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+    .kalkulator-btn:active { transform: translateY(0); }
+    .kalkulator-btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .kalkulator-btn i { font-size: 16px; }
+    .kalkulator-hasil {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      background: rgba(249,115,22,0.08);
+      border: 1px solid rgba(249,115,22,0.25);
+      border-radius: 12px;
+      padding: 12px 14px;
+      animation: kalkFadeIn 0.35s ease;
+    }
+    .kalkulator-hasil.is-visible { display: flex; }
+    @keyframes kalkFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .kalkulator-hasil-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(249,115,22,0.18);
+      border-radius: 10px;
+      color: #f97316;
+      font-size: 20px;
+    }
+    .kalkulator-hasil-text {
+      font-size: 12px;
+      font-weight: 400;
+      color: #e2e8f0;
+      line-height: 1.55;
+    }
+    .kalkulator-hasil-text strong { color: #fff; font-weight: 600; }
+    .kalkulator-hasil-text .hasil-total {
+      color: #f97316;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .kalkulator-status {
+      font-size: 11px;
+      color: #93afd4;
+      min-height: 16px;
+      padding-left: 2px;
+    }
+    .kalkulator-status.is-error { color: #fca5a5; }
+    .kalkulator-status.is-success { color: #86efac; }
+    .outlet-info {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .outlet-info-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .outlet-info-main > i {
+      flex-shrink: 0;
+      font-size: 18px;
+      color: #f97316;
+      margin-top: 1px;
+    }
+    .outlet-info-label {
+      display: block;
+      font-size: 10px;
+      font-weight: 500;
+      color: #93afd4;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+    .outlet-info-alamat {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.45;
+    }
+    .outlet-info-koordinat {
+      font-size: 10px;
+      font-weight: 300;
+      color: rgba(147,175,212,0.55);
+      padding-left: 28px;
+      line-height: 1.4;
+      font-variant-numeric: tabular-nums;
+    }
+    .customer-data {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .customer-data-title {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 500;
+      color: #93afd4;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+    .customer-data-title i {
+      font-size: 13px;
+      color: #f97316;
+    }
+    .customer-data-wajib {
+      color: #f87171;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0.02em;
+    }
+    .kalkulator-input--required:invalid:not(:placeholder-shown),
+    .kalkulator-textarea.kalkulator-input--required:invalid:not(:placeholder-shown) {
+      border-color: rgba(252,165,165,0.5);
+    }
+    @media (max-width: 600px) {
+      .customer-data { grid-template-columns: 1fr; }
+      .outlet-info-koordinat { padding-left: 0; margin-top: 2px; }
+    }
+
+    /* ══ Order Counter ══ */
+    .order-counter {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .order-counter-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: #93afd4;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .order-counter-control {
+      flex: 1;
+      display: flex;
+      align-items: stretch;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .order-counter-control:focus-within {
+      border-color: rgba(249,115,22,0.45);
+    }
+    .order-counter-btn {
+      width: 34px;
+      flex-shrink: 0;
+      border: none;
+      background: transparent;
+      color: #f97316;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, color 0.15s;
+      font-family: 'Poppins', sans-serif;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      position: relative;
+      z-index: 2;
+    }
+    .order-counter-btn:hover:not(:disabled) {
+      background: rgba(249,115,22,0.14);
+      color: #fb923c;
+    }
+    .order-counter-btn:active:not(:disabled) {
+      background: rgba(249,115,22,0.22);
+    }
+    .order-counter-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+    .order-counter-input {
+      flex: 1;
+      min-width: 0;
+      width: 100%;
+      border: none;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      border-right: 1px solid rgba(255,255,255,0.08);
+      background: transparent;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+      outline: none;
+      padding: 7px 4px;
+    }
+    .order-counter-input::placeholder {
+      color: rgba(147,175,212,0.4);
+      font-weight: 400;
+    }
+    .order-counter-unit {
+      font-size: 10px;
+      font-weight: 400;
+      color: #93afd4;
+      flex-shrink: 0;
+      min-width: 24px;
+      text-align: right;
+    }
+    .harga-card.is-ordered {
+      border-color: rgba(249,115,22,0.32);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ══ Checkout Sticky Bar ══ */
+    body { padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
+    .checkout-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: auto;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+      background: linear-gradient(180deg, rgba(8,22,51,0.82) 0%, rgba(8,22,51,0.94) 100%);
+      border-top: 1px solid rgba(249,115,22,0.25);
+      box-shadow: 0 -8px 32px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .checkout-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .checkout-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .checkout-summary-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .checkout-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #93afd4;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .checkout-total {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .checkout-total span {
+      color: #f97316;
+    }
+    .checkout-items {
+      font-size: 11px;
+      font-weight: 300;
+      color: #93afd4;
+    }
+    .checkout-disclaimer {
+      font-size: 9px;
+      font-weight: 300;
+      color: rgba(147,175,212,0.65);
+      line-height: 1.4;
+      max-width: 420px;
+    }
+    .checkout-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+      border: none;
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+      white-space: nowrap;
+    }
+    .checkout-btn i { font-size: 18px; }
+    .checkout-btn:hover:not(:disabled) {
+      opacity: 0.92;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+    }
+    .checkout-btn:active:not(:disabled) { transform: translateY(0); }
+    .checkout-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    @media (max-width: 600px) {
+      body { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+      .kalkulator-textarea { min-height: 88px; font-size: 12px; }
+      .checkout-bar-inner {
+        padding: 10px 14px;
+        gap: 10px;
+      }
+      .checkout-total { font-size: 15px; }
+      .checkout-btn {
+        padding: 11px 14px;
+        font-size: 11px;
+      }
+      .checkout-btn span.checkout-btn-text-full { display: none; }
+      .checkout-btn span.checkout-btn-text-short { display: inline; }
+    }
+    @media (min-width: 601px) {
+      .checkout-btn span.checkout-btn-text-short { display: none; }
+    }
+
+
+    /* Pulse — tombol WhatsApp */
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 4px 14px rgba(37,211,102,0.35); }
+      50%       { box-shadow: 0 4px 24px rgba(37,211,102,0.6); }
+    }
+    .navbar-cta { animation: pulse-wa 2.5s ease-in-out infinite; }
+    .checkout-btn:not(:disabled) { animation: pulse-wa 2.5s ease-in-out infinite; }
+
+
+  </style>
+</head>
+<body>
+
+<!-- â•â• NAVBAR â•â• -->
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="Assets/Logo (1).png" alt="Logo O'Laundry">
+    <span class="navbar-brand" style="font-family: 'Kaushan Script', cursive;">O'Laundry Indonesia</span>
+  </div>
+  <a class="navbar-cta" href="https://wa.me/6289515873882" target="_blank" rel="noopener">
+    <i class="ti ti-brand-whatsapp"></i>
+    Hubungi Kami
+  </a>
+</nav>
+
+<!-- â•â• HERO â•â• -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <i class="ti ti-star-filled" style="font-size:11px;color:var(--orange)"></i>
+      Melayani Pontianak sejak 2020
+    </div>
+    <h1 class="hero-title" style="font-family: 'Poppins', sans-serif;">
+      Pakaian Bersih, Wangi &amp; Rapi &ndash;
+      <span class="accent">Tanpa Ribet</span>
+    </h1>
+    <p class="hero-sub">
+      Percayakan pakaian dan perlengkapan tidur keluarga kamu kepada tim O'Laundry.
+      Pelayanan ramah, proses profesional, dan garansi cuci ulang gratis.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="#layanan-kiloan">
+        <i class="ti ti-brand-whatsapp"></i>
+        Pesan Sekarang !
+      </a>
+      <a class="btn-secondary" href="https://maps.app.goo.gl/M8ggokyEtaG6PCrG8" target="_blank" rel="noopener">
+        <i class="ti ti-map-pin"></i>
+        Lihat Lokasi
+      </a>
+    </div>
+  </div>
+
+  <!-- Phone 3D Premium -->
+  <div class="hero-right">
+    <div class="phone-float-wrapper">
+      <div class="phone-scene">
+        <div class="phone-front">
+        <div class="phone-side-right"></div>
+        <div class="phone-side-bottom"></div>
+        <div class="phone-screen">
+          <div class="dynamic-island"><div class="di-cam"></div></div>
+          <div class="app-header" data-aos="fade-down">
+            <div class="app-avatar">O</div>
+            <div>
+              <div class="app-name">O'Laundry Purnama 2</div>
+              <div class="app-status"><span class="status-dot" aria-hidden="true"></span> Online</div>
+            </div>
+          </div>
+          <div class="app-body">
+            <div class="bubble" data-aos="fade-right" data-aos-delay="200">
+              <div class="bubble-label">O'Laundry</div>
+              Halo! Selamat datang di O'Laundry. Ada yang bisa kami bantu?
+            </div>
+            <div class="bubble right" data-aos="fade-left" data-aos-delay="600">Mau tanya layanan apa saja?</div>
+            <div class="bubble" data-aos="fade-up" data-aos-delay="1000">
+              <div class="bubble-label">Layanan kami</div>
+              <div class="service-row"><div class="s-dot" style="background:#60a5fa"></div><span class="s-text">Cuci kiloan</span></div>
+              <div class="service-row"><div class="s-dot" style="background:#f97316"></div><span class="s-text">Setrika saja</span></div>
+              <div class="service-row"><div class="s-dot" style="background:#34d399"></div><span class="s-text">Bedcover &amp; selimut</span></div>
+            </div>
+            <div class="bubble right">Siap, mau antar sekarang</div>
+            <div class="bubble">Kami siap! Alamat: Jl. Purnama 2 No. 58</div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-input">Ketik pesan...</div>
+            <div class="app-send">
+              <i class="ti ti-send" style="color:#fff;font-size:10px"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="phone-shadow" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â• STATS STRIP â•â• -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <i class="ti ti-calendar" style="color:#fff;font-size:20px"></i>
+    <div><div class="stat-num">5+ Tahun</div><div class="stat-label">Melayani Pontianak</div></div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <i class="ti ti-clock" style="color:#fff;font-size:20px"></i>
+    <div><div class="stat-num">7 Hari</div><div class="stat-label">Buka setiap minggu</div></div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <i class="ti ti-map-pin" style="color:#fff;font-size:20px"></i>
+    <div><div class="stat-num">Purnama 2</div><div class="stat-label">Pontianak Selatan</div></div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item">
+    <i class="ti ti-shield-check" style="color:#fff;font-size:20px"></i>
+    <div><div class="stat-num">Garansi</div><div class="stat-label">Cuci ulang gratis</div></div>
+  </div>
+</div>
+
+
+
+
+
+<!-- ══ SECTION: PROSES PENGERJAAN ══ -->
+<section class="proses" id="proses">
+  <div class="proses-header">
+    <div class="proses-label">
+      <i class="ti ti-list-check"></i>
+      Standar Operasional
+    </div>
+    <div class="proses-header-img" data-aos="fade-up">
+      <img src="Assets/penerimaan.png" alt="Penerimaan Pakaian">
+    </div>
+    <h2 class="proses-title">
+      Bagaimana Kami <span>Merawat</span><br>Pakaian Kamu
+    </h2>
+    <p class="proses-sub">
+      Setiap pakaian melewati 6 tahap standar kami —
+      diperlakukan dengan teliti dari awal hingga sampai kembali ke tanganmu.
+    </p>
+  </div>
+
+  <div class="timeline">
+
+    <!-- Step 1 -->
+    <div class="timeline-item" data-aos="scrapbook-left" data-aos-duration="400">
+      <div class="timeline-icon">
+        <div class="timeline-step">1</div>
+        <i class="ti ti-shirt"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-name">Penerimaan Pakaian</div>
+        <div class="timeline-desc">
+          Pakaian diterima dan diperiksa kondisi awalnya bersama pelanggan
+          untuk memastikan tidak ada kerusakan sebelum proses dimulai.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="timeline-item" data-aos="scrapbook-right" data-aos-duration="400" data-aos-delay="150">
+      <div class="timeline-icon">
+        <div class="timeline-step">2</div>
+        <i class="ti ti-clipboard-list"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-name">Sortir, Hitung & Rekam</div>
+        <div class="timeline-desc">
+          Pakaian disortir berdasarkan jenis dan warna, dihitung,
+          lalu direkam ke sistem untuk memastikan tidak ada yang terlewat.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="timeline-item" data-aos="scrapbook-left" data-aos-duration="400" data-aos-delay="250">
+      <div class="timeline-icon">
+        <div class="timeline-step">3</div>
+        <i class="ti ti-wash"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-name">Spotting & Pencucian</div>
+        <div class="timeline-desc">
+          Noda membandel ditangani terlebih dahulu dengan teknik spotting
+          sebelum masuk proses pencucian menggunakan bahan yang aman untuk kain.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="timeline-item" data-aos="scrapbook-right" data-aos-duration="400" data-aos-delay="350">
+      <div class="timeline-icon">
+        <div class="timeline-step">4</div>
+        <i class="ti ti-wind"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-name">Pengeringan</div>
+        <div class="timeline-desc">
+          Pakaian dikeringkan dengan suhu yang disesuaikan jenis kain
+          agar tidak menyusut dan tetap dalam kondisi terbaik.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="timeline-item" data-aos="scrapbook-left" data-aos-duration="400" data-aos-delay="450">
+      <div class="timeline-icon">
+        <div class="timeline-step">5</div>
+        <i class="ti ti-ironing"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-name">Finishing <span>— Lipat / Setrika, Parfum & Packing</span></div>
+        <div class="timeline-desc">
+          Pakaian dilipat rapi atau disetrika sesuai permintaan,
+          disemprot parfum pilihan, lalu dikemas dengan bersih dan rapi.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="timeline-item" data-aos="scrapbook-right" data-aos-duration="400" data-aos-delay="550">
+      <div class="timeline-icon">
+        <div class="timeline-step">6</div>
+        <i class="ti ti-package"></i>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-name">Pengembalian</div>
+        <div class="timeline-desc">
+          Pakaian dikembalikan dalam kondisi bersih, wangi, dan terpacking rapi —
+          siap diambil atau diantarkan ke alamatmu.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SECTION: HARGA ══ -->
+<section class="harga" id="harga">
+  <div class="harga-header">
+    <div class="harga-label">
+      <i class="ti ti-tag"></i> Daftar Harga
+    </div>
+    <h2 class="harga-title">Layanan & <span>Harga</span></h2>
+    <p class="harga-sub">
+      Transparan, tidak ada biaya tersembunyi — harga sudah termasuk
+      semua proses pengerjaan standar O'Laundry.
+    </p>
+  </div>
+
+  <!-- KILOAN -->
+  <div class="harga-cat" id="layanan-kiloan">
+    <div class="cat-title"><i class="ti ti-wash"></i> Layanan Kiloan</div>
+    <div class="harga-grid">
+      <div class="harga-card">
+        <div class="card-name">Express — Cuci Kering Setrika</div>
+        <div class="card-price">Rp 15.000 <span>/ kg</span></div>
+        <div class="card-badges"><span class="badge b-express">Express 8 jam</span><span class="badge b-min">Min. 3 kg</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Express — Cuci Kering Lipat</div>
+        <div class="card-price">Rp 12.000 <span>/ kg</span></div>
+        <div class="card-badges"><span class="badge b-express">Express 6 jam</span><span class="badge b-min">Min. 3 kg</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Express — Setrika</div>
+        <div class="card-price">Rp 8.000 <span>/ kg</span></div>
+        <div class="card-badges"><span class="badge b-express">Express 4 jam</span><span class="badge b-min">Min. 1 kg</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Reguler — Cuci Kering Setrika</div>
+        <div class="card-price">Rp 10.000 <span>/ kg</span></div>
+        <div class="card-badges"><span class="badge b-reguler">2 hari</span><span class="badge b-min">Min. 3 kg</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Reguler — Cuci Kering Lipat</div>
+        <div class="card-price">Rp 8.000 <span>/ kg</span></div>
+        <div class="card-badges"><span class="badge b-reguler">1 hari</span><span class="badge b-min">Min. 3 kg</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Reguler — Setrika</div>
+        <div class="card-price">Rp 5.500 <span>/ kg</span></div>
+        <div class="card-badges"><span class="badge b-reguler">1 hari</span><span class="badge b-min">Min. 1 kg</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Pasti Irit — Cuci Kering Setrika</div>
+        <div class="card-price">Rp 8.000 <span>/ kg</span></div>
+        <div class="card-badges"><span class="badge b-irit">3 hari</span><span class="badge b-min">Min. 5 kg</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Pasti Irit — Cuci Kering Lipat</div>
+        <div class="card-price">Rp 6.000 <span>/ kg</span></div>
+        <div class="card-badges"><span class="badge b-irit">2 hari</span><span class="badge b-min">Min. 5 kg</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="harga-divider"></div>
+
+  <!-- PERLENGKAPAN TIDUR -->
+  <div class="harga-cat">
+    <div class="cat-title"><i class="ti ti-bed"></i> Perlengkapan Tidur</div>
+    <div class="harga-grid">
+      <div class="harga-card">
+        <div class="card-name">Bed Cover Queen & King</div>
+        <div class="card-price">Rp 35.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">3 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Bed Cover Single</div>
+        <div class="card-price">Rp 25.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">3 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Sprei Rumbai</div>
+        <div class="card-price">Rp 15.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">2 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Sprei Biasa</div>
+        <div class="card-price">Rp 10.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">2 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Selimut Tebal</div>
+        <div class="card-price">Rp 20.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">2 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Selimut Tipis</div>
+        <div class="card-price">Rp 15.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">2 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Bantal</div>
+        <div class="card-price">Rp 20.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">7 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Sarung Bantal Extrasize</div>
+        <div class="card-price">Rp 6.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">2 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Sarung Bantal</div>
+        <div class="card-price">Rp 3.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">2 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Paket Bobo (Sprei + 4 Sarung Bantal)</div>
+        <div class="card-price">Rp 15.000 <span>/ paket</span></div>
+        <div class="card-badges"><span class="badge b-hari">3 hari</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="harga-divider"></div>
+
+  <!-- HANDUK & SATUAN -->
+  <div class="harga-cat">
+    <div class="cat-title"><i class="ti ti-shirt"></i> Handuk & Pakaian Satuan</div>
+    <div class="harga-grid">
+      <div class="harga-card">
+        <div class="card-name">Handuk Besar</div>
+        <div class="card-price">Rp 8.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">2 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Handuk Kecil</div>
+        <div class="card-price">Rp 4.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">2 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Bawahan (Celana Dalam)</div>
+        <div class="card-price">Rp 3.000 <span>/ pcs</span></div>
+        <div class="card-badges"><span class="badge b-hari">2 hari</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="harga-divider"></div>
+
+  <!-- KARPET -->
+  <div class="harga-cat">
+    <div class="cat-title"><i class="ti ti-layout-bottombar"></i> Karpet</div>
+    <div class="harga-grid">
+      <div class="harga-card">
+        <div class="card-name">Karpet Cendol, Bulu & Malaysia</div>
+        <div class="card-price">Rp 30.000 <span>/ m²</span></div>
+        <div class="card-badges"><span class="badge b-hari">7 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Karpet Permadani</div>
+        <div class="card-price">Rp 30.000 <span>/ m²</span></div>
+        <div class="card-badges"><span class="badge b-hari">7 hari</span></div>
+      </div>
+      <div class="harga-card">
+        <div class="card-name">Karpet Tipis</div>
+        <div class="card-price">Rp 20.000 <span>/ m²</span></div>
+        <div class="card-badges"><span class="badge b-hari">7 hari</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="harga-divider"></div>
+
+  <!-- ANTAR JEMPUT -->
+  <div class="harga-cat">
+    <div class="cat-title"><i class="ti ti-motorbike"></i> Antar & Jemput</div>
+    <div class="harga-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+      <div class="harga-card">
+        <div class="card-name">Antar & Jemput (per 3 km)</div>
+        <div class="card-price">Rp 15.000 <span>/ paket</span></div>
+        <div class="card-badges"><span class="badge b-hari">1 hari</span></div>
+      </div>
+
+      <div class="harga-card harga-card--kalkulator" id="kalkulator-antar-jemput">
+
+        <div class="customer-data" id="customer-data">
+          <div class="customer-data-title">
+            <i class="ti ti-user-circle"></i> Data Pelanggan
+            <span class="customer-data-wajib">(Wajib Di isi Untuk Checkout)</span>
+          </div>
+          <div class="kalkulator-field">
+            <label for="customer-name">Nama Lengkap</label>
+            <div class="kalkulator-input-wrap">
+              <i class="ti ti-user"></i>
+              <input
+                type="text"
+                id="customer-name"
+                class="kalkulator-input kalkulator-input--required"
+                required
+                autocomplete="name"
+                placeholder="Masukkan nama Anda..."
+              >
+            </div>
+          </div>
+          <div class="kalkulator-field">
+            <label for="customer-phone">Nomor WhatsApp / Telp</label>
+            <div class="kalkulator-input-wrap">
+              <i class="ti ti-brand-whatsapp"></i>
+              <input
+                type="tel"
+                id="customer-phone"
+                class="kalkulator-input kalkulator-input--required"
+                required
+                autocomplete="tel"
+                inputmode="tel"
+                placeholder="Contoh: 08123456xxx..."
+              >
+            </div>
+          </div>
+          <div class="kalkulator-field kalkulator-field--full">
+            <label for="customer-address">Alamat Lengkap & Patokan Rumah</label>
+            <div class="kalkulator-textarea-wrap">
+              <i class="ti ti-home"></i>
+              <textarea
+                id="customer-address"
+                class="kalkulator-textarea kalkulator-input--required"
+                required
+                rows="3"
+                autocomplete="street-address"
+                placeholder="Masukkan alamat lengkap, nomor rumah, atau patokan..."
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="kalkulator-header">
+          <div class="kalkulator-icon"><i class="ti ti-calculator"></i></div>
+          <div>
+            <div class="kalkulator-title">Kalkulator Tarif Antar Jemput Pintar</div>
+            <div class="kalkulator-desc">Hitung ongkir otomatis berdasarkan jarak riil dari toko O'Laundry ke lokasi Anda. Setiap kelipatan 3 km = 1 paket (Rp 15.000).</div>
+          </div>
+        </div>
+
+        <div class="kalkulator-form">
+
+          <div class="outlet-info" id="outlet-info">
+            <div class="outlet-info-main">
+              <i class="ti ti-building-store"></i>
+              <div>
+                <span class="outlet-info-label">Outlet Resmi O'Laundry:</span>
+                <span class="outlet-info-alamat">Jalan Purnama 2 No 78</span>
+              </div>
+            </div>
+            <p class="outlet-info-koordinat" id="outlet-koordinat">Koordinat Toko: —</p>
+          </div>
+
+          <div class="kalkulator-field">
+            <label for="lokasi-konsumen">Lokasi Anda (GPS) — Opsional</label>
+            <div class="kalkulator-input-wrap">
+              <i class="ti ti-map-pin"></i>
+              <input
+                type="text"
+                id="lokasi-konsumen"
+                class="kalkulator-input"
+                readonly
+                placeholder="Belum terdeteksi — tekan tombol di bawah"
+              >
+            </div>
+          </div>
+
+        </div>
+
+        <button type="button" class="kalkulator-btn" id="btn-deteksi-lokasi">
+          <i class="ti ti-current-location"></i>
+          Deteksi Lokasi Saya
+        </button>
+
+        <p class="kalkulator-status" id="kalkulator-status" aria-live="polite"></p>
+
+        <div class="kalkulator-hasil" id="kalkulator-hasil" aria-live="polite">
+          <div class="kalkulator-hasil-icon"><i class="ti ti-route"></i></div>
+          <p class="kalkulator-hasil-text" id="kalkulator-hasil-text"></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══ CHECKOUT STICKY BAR ══ -->
+<div class="checkout-bar" id="checkout-bar">
+  <div class="checkout-bar-inner">
+    <div class="checkout-summary">
+      <div class="checkout-summary-row">
+        <span class="checkout-label">Estimasi Total</span>
+        <span class="checkout-total" id="checkout-total">Rp <span>0</span></span>
+        <span class="checkout-items" id="checkout-items">(0 item)</span>
+      </div>
+      <p class="checkout-disclaimer">*Harga di atas merupakan estimasi awal. Total final akan dihitung ulang setelah pakaian ditimbang oleh kasir.*</p>
+    </div>
+    <button type="button" class="checkout-btn" id="checkout-btn" disabled>
+      <i class="ti ti-brand-whatsapp"></i>
+      <span class="checkout-btn-text-full">Checkout via WhatsApp</span>
+      <span class="checkout-btn-text-short">Checkout WA</span>
+    </button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: false,
+    offset: 80
+  });
+</script>
+<script>
+(function () {
+  'use strict';
+
+  var TOKO_LAT = -0.063806;
+  var TOKO_LNG = 109.319944;
+  var BLOK_KM = 3;
+  var HARGA_PER_PAKET = 15000;
+  var RADIUS_BUMI_KM = 6371;
+
+  var outletKoordinatEl = document.getElementById('outlet-koordinat');
+  var inputKonsumen = document.getElementById('lokasi-konsumen');
+  var btnDeteksi = document.getElementById('btn-deteksi-lokasi');
+  var statusEl = document.getElementById('kalkulator-status');
+  var hasilEl = document.getElementById('kalkulator-hasil');
+  var hasilTextEl = document.getElementById('kalkulator-hasil-text');
+
+  var watchId = null;
+
+  window.OLaundryOngkir = {
+    aktif: false,
+    jarakKm: 0,
+    paket: 0,
+    tarif: 0,
+    lat: null,
+    lng: null
+  };
+
+  function toRad(derajat) {
+    return derajat * (Math.PI / 180);
+  }
+
+  function haversineKm(lat1, lng1, lat2, lng2) {
+    var dLat = toRad(lat2 - lat1);
+    var dLng = toRad(lng2 - lng1);
+    var a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return RADIUS_BUMI_KM * c;
+  }
+
+  function hitungPaket(jarakKm) {
+    if (jarakKm <= 0) return 1;
+    return Math.ceil(jarakKm / BLOK_KM);
+  }
+
+  function formatRupiah(angka) {
+    return 'Rp ' + angka.toLocaleString('id-ID');
+  }
+
+  function formatKoordinat(lat, lng) {
+    return lat.toFixed(6) + ', ' + lng.toFixed(6);
+  }
+
+  function setStatus(pesan, tipe) {
+    statusEl.textContent = pesan;
+    statusEl.className = 'kalkulator-status' + (tipe ? ' is-' + tipe : '');
+  }
+
+  function tampilkanHasil(jarakKm, paket) {
+    var total = paket * HARGA_PER_PAKET;
+    var jarakTeks = jarakKm.toFixed(1);
+
+    hasilTextEl.innerHTML =
+      'Jarak Anda: <strong>' + jarakTeks + ' km</strong> ' +
+      '(Masuk <strong>' + paket + ' Paket</strong>) — ' +
+      'Total Ongkir: <span class="hasil-total">' + formatRupiah(total) + '</span>';
+
+    hasilEl.classList.add('is-visible');
+  }
+
+  function kartuAntarJemput() {
+    var cats = document.querySelectorAll('.harga-cat');
+    for (var i = 0; i < cats.length; i++) {
+      var judul = cats[i].querySelector('.cat-title');
+      if (!judul || judul.textContent.indexOf('Antar') === -1) continue;
+      return cats[i].querySelector('.harga-card:not(.harga-card--kalkulator)');
+    }
+    return null;
+  }
+
+  function sinkronkanPaketKartu(paket) {
+    var kartu = kartuAntarJemput();
+    if (kartu && kartu.olOrder && kartu.olOrder.setPaketOtomatis) {
+      kartu.olOrder.setPaketOtomatis(paket);
+    }
+  }
+
+  function sembunyikanHasil() {
+    hasilEl.classList.remove('is-visible');
+    window.OLaundryOngkir.aktif = false;
+    sinkronkanPaketKartu(0);
+    if (window.OLaundryCheckout) window.OLaundryCheckout.refresh();
+  }
+
+  function prosesLokasi(lat, lng) {
+    inputKonsumen.value = formatKoordinat(lat, lng);
+
+    var jarak = haversineKm(TOKO_LAT, TOKO_LNG, lat, lng);
+    var paket = hitungPaket(jarak);
+    var tarif = paket * HARGA_PER_PAKET;
+
+    window.OLaundryOngkir = {
+      aktif: true,
+      jarakKm: jarak,
+      paket: paket,
+      tarif: tarif,
+      lat: lat,
+      lng: lng
+    };
+
+    tampilkanHasil(jarak, paket);
+    sinkronkanPaketKartu(paket);
+    setStatus('Lokasi terdeteksi — tarif diperbarui secara real-time.', 'success');
+    if (window.OLaundryCheckout) window.OLaundryCheckout.refresh();
+  }
+
+  function hentikanWatch() {
+    if (watchId !== null) {
+      navigator.geolocation.clearWatch(watchId);
+      watchId = null;
+    }
+  }
+
+  function mulaiDeteksi() {
+    if (!navigator.geolocation) {
+      setStatus('Browser Anda tidak mendukung deteksi GPS.', 'error');
+      return;
+    }
+
+    hentikanWatch();
+    sembunyikanHasil();
+    btnDeteksi.disabled = true;
+    setStatus('Mendeteksi lokasi GPS Anda...', '');
+
+    navigator.geolocation.getCurrentPosition(
+      function (pos) {
+        prosesLokasi(pos.coords.latitude, pos.coords.longitude);
+        btnDeteksi.disabled = false;
+
+        watchId = navigator.geolocation.watchPosition(
+          function (update) {
+            prosesLokasi(update.coords.latitude, update.coords.longitude);
+          },
+          function () { /* abaikan error minor saat live update */ },
+          { enableHighAccuracy: true, maximumAge: 5000, timeout: 15000 }
+        );
+      },
+      function (err) {
+        btnDeteksi.disabled = false;
+        sembunyikanHasil();
+        inputKonsumen.value = '';
+        inputKonsumen.placeholder = 'Belum terdeteksi — tekan tombol di bawah';
+
+        var pesan = 'Gagal mendeteksi lokasi.';
+        if (err.code === 1) pesan = 'Izin lokasi ditolak. Aktifkan GPS & izin browser.';
+        else if (err.code === 2) pesan = 'Sinyal GPS tidak tersedia. Coba di area terbuka.';
+        else if (err.code === 3) pesan = 'Waktu deteksi habis. Silakan coba lagi.';
+
+        setStatus(pesan, 'error');
+      },
+      { enableHighAccuracy: true, maximumAge: 0, timeout: 15000 }
+    );
+  }
+
+  outletKoordinatEl.textContent = 'Koordinat Toko: ' + formatKoordinat(TOKO_LAT, TOKO_LNG);
+  btnDeteksi.addEventListener('click', mulaiDeteksi);
+
+  window.addEventListener('beforeunload', hentikanWatch);
+})();
+
+(function () {
+  'use strict';
+
+  var STEP_KILOAN = 0.1;
+  var counterUid = 0;
+  var hargaSection = document.querySelector('.harga');
+  if (!hargaSection) return;
+
+  function tipeKategori(catEl) {
+    var judul = catEl.querySelector('.cat-title');
+    if (!judul) return 'satuan';
+    return judul.textContent.indexOf('Kiloan') !== -1 ? 'kiloan' : 'satuan';
+  }
+
+  function ambilMinKg(kartu) {
+    var badge = kartu.querySelector('.badge.b-min');
+    if (!badge) return 1;
+    var cocok = badge.textContent.match(/Min\.\s*(\d+(?:[.,]\d+)?)\s*kg/i);
+    return cocok ? parseFloat(cocok[1].replace(',', '.')) : 1;
+  }
+
+  function ambilSatuan(kartu) {
+    var span = kartu.querySelector('.card-price span');
+    if (!span) return 'pcs';
+    return span.textContent.replace(/^\s*\/\s*/, '').trim();
+  }
+
+  function formatKiloan(nilai) {
+    var bulat = Math.round(nilai * 10) / 10;
+    return bulat % 1 === 0 ? String(Math.round(bulat)) : bulat.toFixed(1);
+  }
+
+  function parseHarga(kartu) {
+    var priceEl = kartu.querySelector('.card-price');
+    if (!priceEl) return 0;
+    var teks = priceEl.childNodes[0].textContent.trim();
+    return parseInt(teks.replace(/[^\d]/g, ''), 10) || 0;
+  }
+
+  function parseNama(kartu) {
+    var namaEl = kartu.querySelector('.card-name');
+    return namaEl ? namaEl.textContent.trim() : 'Layanan';
+  }
+
+  function buatCounter(kartu, tipe, minKg, satuan) {
+    var uid = ++counterUid;
+    var state = {
+      aktif: false,
+      nilai: null,
+      min: tipe === 'kiloan' ? minKg : 1,
+      step: tipe === 'kiloan' ? STEP_KILOAN : 1,
+      tipe: tipe
+    };
+
+    var wrap = document.createElement('div');
+    wrap.className = 'order-counter';
+    wrap.setAttribute('data-counter-uid', String(uid));
+    wrap.innerHTML =
+      '<span class="order-counter-label">Jumlah</span>' +
+      '<div class="order-counter-control">' +
+        '<button type="button" class="order-counter-btn order-counter-minus" data-counter-uid="' + uid + '" aria-label="Kurangi jumlah" disabled>−</button>' +
+        '<input type="text" class="order-counter-input order-counter-input--' + uid + '" data-counter-uid="' + uid + '" inputmode="' + (tipe === 'kiloan' ? 'decimal' : 'numeric') + '" autocomplete="off" placeholder="—" aria-label="Jumlah order layanan">' +
+        '<button type="button" class="order-counter-btn order-counter-plus" data-counter-uid="' + uid + '" aria-label="Tambah jumlah">+</button>' +
+      '</div>' +
+      '<span class="order-counter-unit">' + satuan + '</span>';
+
+    kartu.appendChild(wrap);
+    kartu.setAttribute('data-order-uid', String(uid));
+
+    var input = wrap.querySelector('.order-counter-input');
+
+    function refreshUI() {
+      var btnMinus = wrap.querySelector('.order-counter-minus');
+      if (!state.aktif || state.nilai === null) {
+        input.value = '';
+        input.placeholder = '—';
+        kartu.classList.remove('is-ordered');
+        if (btnMinus) btnMinus.disabled = true;
+      } else {
+        input.value = state.tipe === 'kiloan' ? formatKiloan(state.nilai) : String(state.nilai);
+        kartu.classList.add('is-ordered');
+        if (btnMinus) btnMinus.disabled = false;
+      }
+      if (window.OLaundryCheckout) window.OLaundryCheckout.refresh();
+    }
+
+    function cancelOrder() {
+      state.aktif = false;
+      state.nilai = null;
+    }
+
+    function nilaiDiAtasMin() {
+      if (state.tipe === 'kiloan') {
+        return Math.round(state.nilai * 10) > Math.round(state.min * 10);
+      }
+      return Math.round(state.nilai) > state.min;
+    }
+
+    kartu.olOrder = {
+      uid: uid,
+      nama: parseNama(kartu),
+      harga: parseHarga(kartu),
+      satuan: satuan,
+      tipe: tipe,
+      state: state,
+      getQty: function () {
+        return state.aktif && state.nilai !== null ? state.nilai : 0;
+      },
+      formatQty: function () {
+        if (!state.aktif || state.nilai === null) return '';
+        return state.tipe === 'kiloan'
+          ? formatKiloan(state.nilai) + ' ' + satuan
+          : String(state.nilai) + ' ' + satuan;
+      },
+      plus: function () {
+        if (!state.aktif) {
+          state.aktif = true;
+          state.nilai = state.min;
+        } else {
+          state.nilai = Math.round((state.nilai + state.step) * 10) / 10;
+          if (state.tipe === 'satuan') state.nilai = Math.round(state.nilai);
+        }
+        refreshUI();
+      },
+      minus: function () {
+        if (!state.aktif || state.nilai === null) return;
+
+        if (nilaiDiAtasMin()) {
+          state.nilai = Math.round((state.nilai - state.step) * 10) / 10;
+          if (state.tipe === 'satuan') state.nilai = Math.round(state.nilai);
+          if (state.nilai < state.min) state.nilai = state.min;
+        } else {
+          cancelOrder();
+        }
+        refreshUI();
+      },
+      validasiManual: function (teks) {
+        if (teks === '' || teks === '—') {
+          state.aktif = false;
+          state.nilai = null;
+          refreshUI();
+          return;
+        }
+        var angka = parseFloat(String(teks).replace(',', '.'));
+        if (isNaN(angka) || angka <= 0) {
+          state.aktif = false;
+          state.nilai = null;
+          refreshUI();
+          return;
+        }
+        if (state.tipe === 'kiloan') {
+          angka = Math.round(angka * 10) / 10;
+          if (angka < state.min) angka = state.min;
+        } else {
+          angka = Math.ceil(angka);
+          if (angka < 1) angka = 1;
+        }
+        state.aktif = true;
+        state.nilai = angka;
+        refreshUI();
+      },
+      handleInput: function (inputEl) {
+        var v = inputEl.value.replace(/[^0-9.,]/g, '');
+        if (state.tipe === 'satuan' && /[.,]/.test(v)) {
+          var n = parseFloat(v.replace(',', '.'));
+          if (!isNaN(n) && n > 0) {
+            state.aktif = true;
+            state.nilai = Math.max(1, Math.ceil(n));
+            inputEl.value = String(state.nilai);
+            refreshUI();
+            return;
+          }
+        }
+        inputEl.value = v;
+      },
+      setPaketOtomatis: function (qty) {
+        if (qty > 0) {
+          state.aktif = true;
+          state.nilai = Math.round(qty);
+        } else {
+          cancelOrder();
+        }
+        refreshUI();
+      },
+      refreshUI: refreshUI
+    };
+
+    refreshUI();
+  }
+
+  document.querySelectorAll('.harga-cat').forEach(function (cat) {
+    var tipe = tipeKategori(cat);
+    cat.querySelectorAll('.harga-card:not(.harga-card--kalkulator)').forEach(function (kartu) {
+      buatCounter(kartu, tipe, ambilMinKg(kartu), ambilSatuan(kartu));
+    });
+  });
+
+  hargaSection.addEventListener('click', function (e) {
+    var btn = e.target.closest('.order-counter-plus, .order-counter-minus');
+    if (!btn) return;
+    var kartu = btn.closest('.harga-card:not(.harga-card--kalkulator)');
+    if (!kartu || !kartu.olOrder) return;
+    e.preventDefault();
+    if (btn.classList.contains('order-counter-plus')) kartu.olOrder.plus();
+    else kartu.olOrder.minus();
+  });
+
+  hargaSection.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter') return;
+    var input = e.target.closest('.order-counter-input');
+    if (input) input.blur();
+  });
+
+  hargaSection.addEventListener('focusout', function (e) {
+    var input = e.target.closest('.order-counter-input');
+    if (!input) return;
+    var kartu = input.closest('.harga-card');
+    if (!kartu || !kartu.olOrder) return;
+    kartu.olOrder.validasiManual(input.value.trim());
+  });
+
+  hargaSection.addEventListener('input', function (e) {
+    var input = e.target.closest('.order-counter-input');
+    if (!input) return;
+    var kartu = input.closest('.harga-card');
+    if (!kartu || !kartu.olOrder) return;
+    kartu.olOrder.handleInput(input);
+  });
+})();
+
+(function () {
+  'use strict';
+
+  var WA_PHONE = '6289515873882';
+  var WA_BASE = 'https://api.whatsapp.com/send';
+  var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9GyI3wKUTv027Z7MkNRuUBUaW0vzSYizreIr9wz7ZL2_8tB0-mvNYU5X4M2zSlRc/exec';
+
+  var totalEl = document.getElementById('checkout-total');
+  var itemsEl = document.getElementById('checkout-items');
+  var btnCheckout = document.getElementById('checkout-btn');
+  var inputNama = document.getElementById('customer-name');
+  var inputTelepon = document.getElementById('customer-phone');
+  var inputAlamat = document.getElementById('customer-address');
+  var inputLokasi = document.getElementById('lokasi-konsumen');
+  var statusKalkulator = document.getElementById('kalkulator-status');
+  var kalkulatorCard = document.getElementById('kalkulator-antar-jemput');
+
+  function formatRupiah(angka) {
+    return 'Rp ' + angka.toLocaleString('id-ID');
+  }
+
+  function kartuAntarJemput() {
+    var cats = document.querySelectorAll('.harga-cat');
+    for (var i = 0; i < cats.length; i++) {
+      var judul = cats[i].querySelector('.cat-title');
+      if (!judul || judul.textContent.indexOf('Antar') === -1) continue;
+      return cats[i].querySelector('.harga-card:not(.harga-card--kalkulator)');
+    }
+    return null;
+  }
+
+  function qtyAntarJemput() {
+    var kartu = kartuAntarJemput();
+    return kartu && kartu.olOrder ? kartu.olOrder.getQty() : 0;
+  }
+
+  function kumpulkanItem() {
+    var items = [];
+    document.querySelectorAll('.harga-card:not(.harga-card--kalkulator)').forEach(function (kartu) {
+      if (!kartu.olOrder) return;
+      var qty = kartu.olOrder.getQty();
+      if (qty <= 0) return;
+      items.push({
+        nama: kartu.olOrder.nama,
+        qty: qty,
+        satuan: kartu.olOrder.satuan,
+        harga: kartu.olOrder.harga,
+        subtotal: Math.round(qty * kartu.olOrder.harga),
+        qtyLabel: kartu.olOrder.formatQty()
+      });
+    });
+    return items;
+  }
+
+  function hitungRingkasan() {
+    var items = kumpulkanItem();
+    var subtotalLayanan = items.reduce(function (s, i) { return s + i.subtotal; }, 0);
+    var ongkir = window.OLaundryOngkir || { aktif: false, tarif: 0 };
+    var tarifOngkir = ongkir.aktif ? ongkir.tarif : 0;
+    var grandTotal = subtotalLayanan;
+    var jumlahItem = items.length;
+    return { items: items, subtotalLayanan: subtotalLayanan, ongkir: ongkir, tarifOngkir: tarifOngkir, grandTotal: grandTotal, jumlahItem: jumlahItem };
+  }
+
+  function ambilDataPelanggan() {
+    return {
+      nama: inputNama ? inputNama.value.trim() : '',
+      telepon: inputTelepon ? inputTelepon.value.trim() : '',
+      alamat: inputAlamat ? inputAlamat.value.trim() : ''
+    };
+  }
+
+  function tampilkanPeringatan(pesan, fokusEl) {
+    if (statusKalkulator) {
+      statusKalkulator.textContent = pesan;
+      statusKalkulator.className = 'kalkulator-status is-error';
+    }
+    if (kalkulatorCard) {
+      kalkulatorCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    if (fokusEl) {
+      setTimeout(function () { fokusEl.focus(); }, 400);
+    }
+  }
+
+  function validasiCheckout(ringkas) {
+    var pelanggan = ambilDataPelanggan();
+    var teleponBersih = pelanggan.telepon.replace(/[\s\-().]/g, '');
+
+    if (!pelanggan.nama) {
+      tampilkanPeringatan('Mohon isi nama lengkap Anda sebelum checkout.', inputNama);
+      return false;
+    }
+    if (!teleponBersih || teleponBersih.length < 9) {
+      tampilkanPeringatan('Mohon isi nomor WhatsApp/telepon yang valid (min. 9 digit).', inputTelepon);
+      return false;
+    }
+    if (!pelanggan.alamat) {
+      tampilkanPeringatan('Mohon isi alamat lengkap & patokan rumah sebelum checkout.', inputAlamat);
+      return false;
+    }
+    if (qtyAntarJemput() < 1) {
+      var kartuAj = kartuAntarJemput();
+      tampilkanPeringatan('Mohon pilih minimal 1 paket Antar & Jemput sebelum checkout.', null);
+      if (kartuAj) {
+        kartuAj.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return false;
+    }
+    if (statusKalkulator) {
+      statusKalkulator.textContent = '';
+      statusKalkulator.className = 'kalkulator-status';
+    }
+    return true;
+  }
+
+  function perbaruiBar() {
+    var ringkas = hitungRingkasan();
+    totalEl.innerHTML = formatRupiah(ringkas.grandTotal).replace('Rp ', 'Rp <span>') + '</span>';
+    itemsEl.textContent = '(' + ringkas.jumlahItem + ' item)';
+    btnCheckout.disabled = ringkas.grandTotal <= 0 || qtyAntarJemput() < 1;
+  }
+
+  function buatRingkasanLayanan() {
+    var baris = [];
+    document.querySelectorAll('.harga-card:not(.harga-card--kalkulator)').forEach(function (kartu) {
+      if (!kartu.olOrder) return;
+      var qty = kartu.olOrder.getQty();
+      if (qty <= 0) return;
+      var kuantitas = kartu.olOrder.formatQty().replace(/\s+/g, '');
+      baris.push(kartu.olOrder.nama + ' x' + kuantitas);
+    });
+    return baris.join(', ');
+  }
+
+  function parseKoordinatDariInput(teks) {
+    if (!teks) return null;
+    var parts = teks.split(',');
+    if (parts.length < 2) return null;
+    var lat = parseFloat(parts[0].trim());
+    var lng = parseFloat(parts[1].trim());
+    if (isNaN(lat) || isNaN(lng)) return null;
+    return { lat: lat, lng: lng };
+  }
+
+  function ambilKoordinatPelanggan(callback) {
+    var ongkir = window.OLaundryOngkir || {};
+    if (ongkir.lat !== null && ongkir.lng !== null && !isNaN(ongkir.lat) && !isNaN(ongkir.lng)) {
+      callback(ongkir.lat, ongkir.lng);
+      return;
+    }
+
+    if (inputLokasi && inputLokasi.value.trim()) {
+      var dariInput = parseKoordinatDariInput(inputLokasi.value.trim());
+      if (dariInput) {
+        callback(dariInput.lat, dariInput.lng);
+        return;
+      }
+    }
+
+    if (!navigator.geolocation) {
+      callback(null, null);
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      function (pos) {
+        callback(pos.coords.latitude, pos.coords.longitude);
+      },
+      function () {
+        callback(null, null);
+      },
+      { enableHighAccuracy: true, maximumAge: 30000, timeout: 10000 }
+    );
+  }
+
+  function bangunPesanWA(ringkas) {
+    var baris = [];
+    baris.push("*O'LAUNDRY - NOTA PESANAN*");
+    baris.push('---------------------------------');
+    baris.push('*Data Pelanggan:*');
+    baris.push('- Nama: ' + ringkas.pelanggan.nama);
+    baris.push('- No. Telp: ' + ringkas.pelanggan.telepon);
+    baris.push('- Alamat: ' + ringkas.pelanggan.alamat);
+    baris.push('');
+
+    var layananItems = ringkas.items.filter(function (item) {
+      return !(ringkas.ongkir.aktif && item.nama.indexOf('Antar & Jemput') !== -1);
+    });
+
+    if (layananItems.length > 0) {
+      baris.push('*Detail Layanan:*');
+      layananItems.forEach(function (item) {
+        baris.push('- ' + item.nama + ' x ' + item.qtyLabel + ' = ' + formatRupiah(item.subtotal));
+      });
+    }
+
+    if (ringkas.ongkir.aktif) {
+      if (layananItems.length === 0) baris.push('*Detail Layanan:*');
+      baris.push(
+        '- Ongkir Antar-Jemput: ' + ringkas.ongkir.jarakKm.toFixed(1) + ' km (' +
+        ringkas.ongkir.paket + ' Paket) = ' + formatRupiah(ringkas.ongkir.tarif)
+      );
+    }
+
+    baris.push('---------------------------------');
+    baris.push('*ESTIMASI TOTAL BAYAR: ' + formatRupiah(ringkas.grandTotal) + '*');
+    baris.push('(Catatan: Total akhir dapat berubah sesuai timbangan riil di outlet)');
+
+    if (ringkas.ongkir.aktif && ringkas.ongkir.lat !== null && ringkas.ongkir.lng !== null) {
+      baris.push('');
+      baris.push('*Lokasi GPS (Opsional):*');
+      baris.push('Klik link di bawah ini untuk navigasi Maps kurir:');
+      baris.push(
+        'https://www.google.com/maps/search/?api=1&query=' +
+        ringkas.ongkir.lat + ',' + ringkas.ongkir.lng
+      );
+    }
+
+    return baris.join('\n');
+  }
+
+  function kirimKeGoogleScript(payload) {
+    var body = JSON.stringify(payload);
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: body
+    }).catch(function () { /* abaikan error jaringan minor */ });
+  }
+
+  function checkoutWA() {
+    var ringkas = hitungRingkasan();
+    if (ringkas.grandTotal <= 0) return;
+
+    var pelanggan = ambilDataPelanggan();
+    ringkas.pelanggan = pelanggan;
+
+    if (!validasiCheckout(ringkas)) return;
+
+    var ringkasanLayanan = buatRingkasanLayanan();
+    var ongkir = ringkas.ongkir || { aktif: false, jarakKm: 0, tarif: 0 };
+    var jarakHasilKalkulator = ongkir.aktif ? ongkir.jarakKm : 0;
+    var grandTotal = ringkas.grandTotal;
+
+    btnCheckout.disabled = true;
+
+    ambilKoordinatPelanggan(function (userLat, userLng) {
+      btnCheckout.disabled = grandTotal <= 0 || qtyAntarJemput() < 1;
+
+      kirimKeGoogleScript({
+        nama: pelanggan.nama,
+        whatsapp: pelanggan.telepon,
+        alamat: pelanggan.alamat,
+        layanan: ringkasanLayanan,
+        jarak: jarakHasilKalkulator,
+        total: grandTotal,
+        lat: userLat,
+        lng: userLng
+      });
+
+      var pesan = bangunPesanWA(ringkas);
+      var url = WA_BASE + '?phone=' + WA_PHONE + '&text=' + encodeURIComponent(pesan);
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  window.OLaundryCheckout = {
+    refresh: perbaruiBar,
+    getRingkasan: hitungRingkasan
+  };
+
+  btnCheckout.addEventListener('click', checkoutWA);
+  perbaruiBar();
+})();
+</script>
+
+</body>
+</html>
