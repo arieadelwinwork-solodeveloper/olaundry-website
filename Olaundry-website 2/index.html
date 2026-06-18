@@ -448,8 +448,20 @@
       .navbar-brand { font-size: 0.88rem; max-width: 9.5rem; overflow: hidden; text-overflow: ellipsis; }
       .navbar-cta { padding: 7px 10px; font-size: 11px; gap: 6px; }
       .hero-title { font-size: 34px; }
-      .hero-ctas { flex-direction: column; }
-      .btn-primary, .btn-secondary { justify-content: center; width: 100%; max-width: 280px; }
+      .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      .btn-primary, .btn-secondary {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
     }
     @media (max-width: 360px) {
       .navbar-brand { display: none; }
@@ -1312,222 +1324,97 @@
     }
 
 
-    /* Pulse organik — detak + riak air (mobile-safe) */
-    .navbar-cta.pulse-cta,
-    .btn-primary.pulse-cta {
-      overflow: visible;
-      isolation: auto;
-      transition: background 0.2s, transform 0.15s;
-      animation: pulse-breathe-indigo 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-      -webkit-animation: pulse-breathe-indigo 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    /* Pulse — ring + scale (iOS Safari compatible) */
+  .navbar-cta.pulse-cta,
+  .btn-primary.pulse-cta {
+    overflow: visible;
+    isolation: auto;
+    transition: background 0.2s;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+  }
+  .btn-primary.pulse-cta {
+    transition: background 0.2s;
+  }
+  @keyframes pulse-ring-indigo {
+    0% {
+      -webkit-transform: scale(0.97);
+      transform: scale(0.97);
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.45), 0 0 0 0 rgba(129, 140, 248, 0.75);
     }
-    .btn-primary.pulse-cta {
-      animation-name: pulse-breathe-orange;
-      -webkit-animation-name: pulse-breathe-orange;
+    20% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.4), 0 0 0 8px rgba(129, 140, 248, 0.4);
     }
-    .navbar-cta.pulse-cta > *,
-    .btn-primary.pulse-cta > * {
-      position: relative;
-      z-index: 1;
+    55% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      box-shadow: 0 5px 16px rgba(79, 70, 229, 0.3), 0 0 0 16px rgba(129, 140, 248, 0.12);
     }
-    @keyframes pulse-breathe-indigo {
-      0% {
-        box-shadow:
-          0 4px 14px rgba(79, 70, 229, 0.45),
-          0 0 0 0 rgba(129, 140, 248, 0.7);
-      }
-      14% {
-        box-shadow:
-          0 6px 20px rgba(79, 70, 229, 0.38),
-          0 0 0 6px rgba(129, 140, 248, 0.45);
-      }
-      24% {
-        box-shadow:
-          0 5px 16px rgba(79, 70, 229, 0.32),
-          0 0 0 10px rgba(129, 140, 248, 0.22);
-      }
-      38% {
-        box-shadow:
-          0 6px 18px rgba(79, 70, 229, 0.26),
-          0 0 0 14px rgba(129, 140, 248, 0.1);
-      }
-      100% {
-        box-shadow:
-          0 4px 14px rgba(79, 70, 229, 0.2),
-          0 0 0 28px rgba(129, 140, 248, 0);
-      }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.2), 0 0 0 28px rgba(129, 140, 248, 0);
     }
-    @keyframes pulse-breathe-orange {
-      0% {
-        box-shadow:
-          0 4px 14px rgba(249, 115, 22, 0.45),
-          0 0 0 0 rgba(251, 146, 60, 0.7);
-      }
-      14% {
-        box-shadow:
-          0 6px 20px rgba(249, 115, 22, 0.4),
-          0 0 0 6px rgba(251, 146, 60, 0.45);
-      }
-      24% {
-        box-shadow:
-          0 5px 16px rgba(249, 115, 22, 0.34),
-          0 0 0 10px rgba(251, 146, 60, 0.22);
-      }
-      38% {
-        box-shadow:
-          0 6px 18px rgba(249, 115, 22, 0.28),
-          0 0 0 14px rgba(251, 146, 60, 0.1);
-      }
-      100% {
-        box-shadow:
-          0 4px 14px rgba(249, 115, 22, 0.2),
-          0 0 0 28px rgba(251, 146, 60, 0);
-      }
+  }
+  @keyframes pulse-ring-orange {
+    0% {
+      -webkit-transform: scale(0.97);
+      transform: scale(0.97);
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.45), 0 0 0 0 rgba(251, 146, 60, 0.75);
     }
-  /* Hero: inset glow agar tidak terpotong overflow:hidden */
-    @keyframes pulse-hero-orange {
-      0% {
-        box-shadow:
-          0 4px 14px rgba(249, 115, 22, 0.4),
-          inset 0 0 0 0 rgba(255, 255, 255, 0);
-      }
-      18% {
-        box-shadow:
-          0 6px 22px rgba(249, 115, 22, 0.5),
-          inset 0 0 18px rgba(255, 255, 255, 0.14);
-      }
-      45% {
-        box-shadow:
-          0 5px 18px rgba(249, 115, 22, 0.38),
-          inset 0 0 10px rgba(255, 255, 255, 0.08);
-      }
-      100% {
-        box-shadow:
-          0 4px 14px rgba(249, 115, 22, 0.35),
-          inset 0 0 0 0 rgba(255, 255, 255, 0);
-      }
+    20% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      box-shadow: 0 6px 18px rgba(249, 115, 22, 0.42), 0 0 0 8px rgba(251, 146, 60, 0.4);
     }
-    .hero .btn-primary.pulse-cta {
-      animation-name: pulse-hero-orange;
-      -webkit-animation-name: pulse-hero-orange;
+    55% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      box-shadow: 0 5px 16px rgba(249, 115, 22, 0.32), 0 0 0 16px rgba(251, 146, 60, 0.12);
     }
-    @keyframes pulse-ripple-indigo {
-      0% {
-        transform: scale(0.95);
-        opacity: 0.85;
-        box-shadow: 0 0 0 0 rgba(129, 140, 248, 0.65);
-      }
-      20% {
-        transform: scale(1);
-        opacity: 0.6;
-        box-shadow: 0 0 0 8px rgba(129, 140, 248, 0.35);
-      }
-      60% {
-        transform: scale(1.06);
-        opacity: 0.2;
-        box-shadow: 0 0 0 18px rgba(129, 140, 248, 0.08);
-      }
-      100% {
-        transform: scale(1.12);
-        opacity: 0;
-        box-shadow: 0 0 0 32px rgba(129, 140, 248, 0);
-      }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.2), 0 0 0 28px rgba(251, 146, 60, 0);
     }
-    @keyframes pulse-ripple-orange {
-      0% {
-        transform: scale(0.95);
-        opacity: 0.85;
-        box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.65);
-      }
-      20% {
-        transform: scale(1);
-        opacity: 0.6;
-        box-shadow: 0 0 0 8px rgba(251, 146, 60, 0.35);
-      }
-      60% {
-        transform: scale(1.06);
-        opacity: 0.2;
-        box-shadow: 0 0 0 18px rgba(251, 146, 60, 0.08);
-      }
-      100% {
-        transform: scale(1.12);
-        opacity: 0;
-        box-shadow: 0 0 0 32px rgba(251, 146, 60, 0);
-      }
+  }
+  @keyframes pulse-ring-checkout {
+    0% {
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.38), 0 0 0 0 rgba(37, 211, 102, 0.55);
     }
-    @keyframes pulse-organic-checkout {
-      0% {
-        box-shadow:
-          0 4px 16px rgba(37, 211, 102, 0.38),
-          0 0 0 0 rgba(37, 211, 102, 0.55);
-      }
-      16% {
-        box-shadow:
-          0 6px 22px rgba(37, 211, 102, 0.34),
-          0 0 0 6px rgba(37, 211, 102, 0.38);
-      }
-      100% {
-        box-shadow:
-          0 4px 16px rgba(37, 211, 102, 0.22),
-          0 0 0 24px rgba(37, 211, 102, 0);
-      }
+    20% {
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.34), 0 0 0 8px rgba(37, 211, 102, 0.38);
     }
-    .navbar-cta.pulse-cta::before,
-    .navbar-cta.pulse-cta::after,
-    .btn-primary.pulse-cta::before,
-    .btn-primary.pulse-cta::after {
-      content: '';
-      position: absolute;
-      inset: -3px;
-      border-radius: inherit;
-      pointer-events: none;
-      z-index: 0;
-      border: none;
-      background: transparent;
-      will-change: transform, opacity, box-shadow;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
+    100% {
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.22), 0 0 0 24px rgba(37, 211, 102, 0);
     }
-    .navbar-cta.pulse-cta::before,
-    .navbar-cta.pulse-cta::after {
-      animation: pulse-ripple-indigo 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-      -webkit-animation: pulse-ripple-indigo 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-    }
-    .btn-primary.pulse-cta::before,
-    .btn-primary.pulse-cta::after {
-      animation: pulse-ripple-orange 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-      -webkit-animation: pulse-ripple-orange 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-    }
-    .hero .btn-primary.pulse-cta::before,
-    .hero .btn-primary.pulse-cta::after {
-      display: none;
-    }
-    .navbar-cta.pulse-cta::after,
-    .btn-primary.pulse-cta::after {
-      animation-delay: 1.09s;
-      -webkit-animation-delay: 1.09s;
-    }
-    .checkout-btn:not(:disabled) {
-      animation: pulse-organic-checkout 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-      -webkit-animation: pulse-organic-checkout 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .navbar-cta.pulse-cta,
-      .btn-primary.pulse-cta,
-      .checkout-btn:not(:disabled) {
-        animation: none;
-        -webkit-animation: none;
-      }
-      .navbar-cta.pulse-cta::before,
-      .navbar-cta.pulse-cta::after,
-      .btn-primary.pulse-cta::before,
-      .btn-primary.pulse-cta::after {
-        animation: none;
-        -webkit-animation: none;
-      }
-    }
+  }
+  .navbar-cta.pulse-cta {
+    -webkit-animation: pulse-ring-indigo 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    animation: pulse-ring-indigo 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+  .btn-primary.pulse-cta {
+    -webkit-animation: pulse-ring-orange 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    animation: pulse-ring-orange 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  }
+  .navbar-cta.pulse-cta::before,
+  .navbar-cta.pulse-cta::after,
+  .btn-primary.pulse-cta::before,
+  .btn-primary.pulse-cta::after {
+    display: none;
+  }
+  .checkout-btn:not(:disabled) {
+    -webkit-animation: pulse-ring-checkout 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    animation: pulse-ring-checkout 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    transition: opacity 0.2s;
+  }
+  .navbar-cta.pulse-cta:hover,
+  .btn-primary.pulse-cta:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
 
 
   </style>
