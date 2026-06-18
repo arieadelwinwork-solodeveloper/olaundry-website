@@ -74,7 +74,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--green-wa);
+      background: #4f46e5;
       color: #fff;
       border: none;
       border-radius: 8px;
@@ -85,9 +85,11 @@
       cursor: pointer;
       text-decoration: none;
       transition: background 0.2s, transform 0.15s;
+      position: relative;
+      isolation: isolate;
     }
     .navbar-cta:hover {
-      background: #1fb355;
+      background: #4338ca;
       transform: translateY(-1px);
     }
 
@@ -183,6 +185,8 @@
       text-decoration: none;
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
       box-shadow: 0 4px 14px rgba(249,115,22,0.35);
+      position: relative;
+      isolation: isolate;
     }
     .btn-primary:hover {
       background: #ea6a0a;
@@ -1293,13 +1297,116 @@
     }
 
 
-    /* Pulse — tombol WhatsApp */
-    @keyframes pulse-wa {
-      0%, 100% { box-shadow: 0 4px 14px rgba(37,211,102,0.35); }
-      50%       { box-shadow: 0 4px 24px rgba(37,211,102,0.6); }
+    /* Pulse organik — detak + riak air */
+    .navbar-cta.pulse-cta {
+      --pulse-glow: 129, 140, 248;
     }
-    .navbar-cta { animation: pulse-wa 2.5s ease-in-out infinite; }
-    .checkout-btn:not(:disabled) { animation: pulse-wa 2.5s ease-in-out infinite; }
+    .btn-primary.pulse-cta {
+      --pulse-glow: 251, 146, 60;
+    }
+    @keyframes pulse-organic-ripple {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.9;
+        box-shadow: 0 0 0 0 rgba(var(--pulse-glow), 0.62);
+      }
+      18% {
+        transform: scale(1);
+        opacity: 0.72;
+        box-shadow: 0 0 0 5px rgba(var(--pulse-glow), 0.42);
+      }
+      55% {
+        transform: scale(1.04);
+        opacity: 0.28;
+        box-shadow: 0 0 0 14px rgba(var(--pulse-glow), 0.12);
+      }
+      100% {
+        transform: scale(1.1);
+        opacity: 0;
+        box-shadow: 0 0 0 28px rgba(var(--pulse-glow), 0);
+      }
+    }
+    @keyframes pulse-organic-breathe {
+      0% {
+        box-shadow:
+          0 4px 14px rgba(var(--pulse-glow), 0.48),
+          0 0 0 0 rgba(var(--pulse-glow), 0.55);
+      }
+      14% {
+        box-shadow:
+          0 6px 20px rgba(var(--pulse-glow), 0.4),
+          0 0 0 4px rgba(var(--pulse-glow), 0.38);
+      }
+      24% {
+        box-shadow:
+          0 5px 16px rgba(var(--pulse-glow), 0.34),
+          0 0 0 7px rgba(var(--pulse-glow), 0.2);
+      }
+      38% {
+        box-shadow:
+          0 6px 18px rgba(var(--pulse-glow), 0.28),
+          0 0 0 10px rgba(var(--pulse-glow), 0.1);
+      }
+      100% {
+        box-shadow:
+          0 4px 14px rgba(var(--pulse-glow), 0.2),
+          0 0 0 24px rgba(var(--pulse-glow), 0);
+      }
+    }
+    @keyframes pulse-organic-checkout {
+      0% {
+        box-shadow:
+          0 4px 16px rgba(37, 211, 102, 0.38),
+          0 0 0 0 rgba(37, 211, 102, 0.52);
+      }
+      16% {
+        box-shadow:
+          0 6px 22px rgba(37, 211, 102, 0.34),
+          0 0 0 4px rgba(37, 211, 102, 0.36);
+      }
+      100% {
+        box-shadow:
+          0 4px 16px rgba(37, 211, 102, 0.22),
+          0 0 0 22px rgba(37, 211, 102, 0);
+      }
+    }
+    .navbar-cta.pulse-cta,
+    .btn-primary.pulse-cta {
+      animation: pulse-organic-breathe 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    }
+    .navbar-cta.pulse-cta::before,
+    .navbar-cta.pulse-cta::after,
+    .btn-primary.pulse-cta::before,
+    .btn-primary.pulse-cta::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      z-index: -1;
+      border: none;
+      animation: pulse-organic-ripple 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    }
+    .navbar-cta.pulse-cta::after,
+    .btn-primary.pulse-cta::after {
+      animation-delay: 1.09s;
+    }
+    .checkout-btn:not(:disabled) {
+      animation: pulse-organic-checkout 2.19s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .navbar-cta.pulse-cta,
+      .btn-primary.pulse-cta,
+      .checkout-btn:not(:disabled) {
+        animation: none;
+      }
+      .navbar-cta.pulse-cta::before,
+      .navbar-cta.pulse-cta::after,
+      .btn-primary.pulse-cta::before,
+      .btn-primary.pulse-cta::after {
+        animation: none;
+      }
+    }
 
 
   </style>
@@ -1312,9 +1419,9 @@
     <img src="Assets/Logo (1).png" alt="Logo O'Laundry">
     <span class="navbar-brand" style="font-family: 'Kaushan Script', cursive;">O'Laundry Indonesia</span>
   </div>
-  <a class="navbar-cta" href="https://wa.me/6289515873882" target="_blank" rel="noopener">
-    <i class="ti ti-brand-whatsapp"></i>
-    Hubungi Kami
+  <a class="navbar-cta pulse-cta" href="https://feedbackloopindonesia.netlify.app/?usaha=O%27Laundry" target="_blank" rel="noopener noreferrer">
+    <i class="ti ti-mail"></i>
+    Kritik & Saran
   </a>
 </nav>
 
@@ -1334,7 +1441,7 @@
       Pelayanan ramah, proses profesional, dan garansi cuci ulang gratis.
     </p>
     <div class="hero-ctas">
-      <a class="btn-primary" href="#layanan-kiloan">
+      <a class="btn-primary pulse-cta" href="#layanan-kiloan">
         <i class="ti ti-brand-whatsapp"></i>
         Pesan Sekarang !
       </a>
